@@ -15,5 +15,12 @@ export default resolvers = {
 			return await Matchup.find({});
 		},
 	},
-	Mutation: {},
+	Mutation: {
+		createMatchup: async (parent, { tech1, tech2, ...args }, context) => {
+			return await Matchup.create({ tech1, tech2 });
+		},
+		createVote: async (parent, { id, techNum }, context) => {
+			return await Matchup.findOneAndUpdate({ _id: id }, { techNum });
+		},
+	},
 };
