@@ -1,6 +1,6 @@
-import { Tech, Matchup } from "../models/index.js";
+const { Tech, Matchup } = require("../models/index.js");
 
-export default resolvers = {
+const resolvers = {
 	Query: {
 		tech: async (parent, args, context) => {
 			return await Tech.findById(args.id);
@@ -24,3 +24,5 @@ export default resolvers = {
 		},
 	},
 };
+
+module.exports = resolvers;

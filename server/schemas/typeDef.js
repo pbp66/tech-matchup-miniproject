@@ -1,6 +1,4 @@
-const { gql } = require("apollo-server-express");
-
-export default typeDefs = gql`
+const typeDefs = `
 	type Tech {
 		_id: ID!
 		name: String!
@@ -18,7 +16,7 @@ export default typeDefs = gql`
 		tech(id: ID!): Tech
 		techs: [Tech]
 		matchup(id: ID!): Matchup
-		matchups: [MatchUp]
+		matchups: [Matchup]
 	}
 
 	type Mutation {
@@ -27,3 +25,5 @@ export default typeDefs = gql`
 		#updateVote?
 	}
 `;
+
+module.exports = typeDefs;
