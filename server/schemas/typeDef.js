@@ -17,6 +17,7 @@ type Matchup {
 type Query {
     tech(id: ID!): Tech
     techs: [Tech]
+    matchup(id: ID!): Matchup
     matchups: [MatchUp]
 }
 
