@@ -20,7 +20,11 @@ const resolvers = {
 			return await Matchup.create({ tech1, tech2 });
 		},
 		createVote: async (parent, { id, techNum }, context) => {
-			return await Matchup.findOneAndUpdate({ _id: id }, { techNum });
+			return await Matchup.findOneAndUpdate(
+				{ _id: _id },
+				{ $inc: { [`tech${techNum}_votes`]: 1 } },
+				{ new: true }
+			);
 		},
 	},
 };
